@@ -9,8 +9,4 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CricketerDetails.WebAPI\CricketerDetails.WebAPI.csproj" />
-  </ItemGroup>
-
 </Project>
