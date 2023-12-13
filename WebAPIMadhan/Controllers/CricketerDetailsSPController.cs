@@ -14,12 +14,12 @@ namespace WebAPIMadhan.Controllers
     [ApiController]
     public class CricketerDetailsSPController : ControllerBase
     {
-        private readonly ICricketer _obje = null;
+        private readonly ICricketerRepository _obje = null;
 
 
         public CricketerDetailsSPController()
         {
-            _obje = new CricketerRepos();
+            _obje = new CricketerRepository();
         }
         // GET: api/<ValuesController>
         [HttpGet]

@@ -6,16 +6,14 @@ using System.Linq;
 
 namespace DapperDataAccessLayer.WebApi
 {
-    public class CricketerRepos : ICricketer
+    public class CricketerRepository : ICricketerRepository
     {
 
-
+        string connectionString = "Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
         public void InsertSP(Cricketer details)
         {
             try
-            {
-                var connectionString = "Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
-
+            {                
                 var con = new SqlConnection(connectionString);
                 con.Open();
                 var insertQuery = $"exec InsertSP @CricketerName='{details.CricketerName}', @TotalODI={details.TotalODI}, @TotalScore={details.TotalScore}, @Fifties={details.Fifties},@Hundreds={details.Hundreds} ";
@@ -41,8 +39,6 @@ namespace DapperDataAccessLayer.WebApi
         {
             try
             {
-                var connectionString = "Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
-
                 var con = new SqlConnection(connectionString);
                 con.Open();
                 var selectQuery = $"exec ReadSP";
@@ -70,8 +66,7 @@ namespace DapperDataAccessLayer.WebApi
         {
             try
             {
-                var connectionString = "Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
-
+               
                 var con = new SqlConnection(connectionString);
                 con.Open();
                 var deleteQuery = $"exec DeleteSP {CricketerId}";
@@ -94,8 +89,6 @@ namespace DapperDataAccessLayer.WebApi
         {
             try
             {
-                var connectionString = "Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
-
                 var con = new SqlConnection(connectionString);
                 con.Open();
                 var updateQuery = $"exec UpdateSP  {cricketerId},'{prd.CricketerName}',{prd.TotalODI},{prd.TotalScore},{prd.Fifties},{prd.Hundreds} ";
