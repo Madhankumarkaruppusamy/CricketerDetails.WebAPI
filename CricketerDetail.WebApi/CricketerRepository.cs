@@ -8,8 +8,8 @@ namespace DapperDataAccessLayer.WebApi
 {
     public class CricketerRepository : ICricketerRepository
     {
+        string connectionString = "Data source=DESKTOP-GLDT57N\\SQLEXPRESS;initial catalog=master;user id=sa;password=Password@123;";
 
-        string connectionString = "Data source=DESKTOP-BLBGEHJ\\SQLEXPRESS;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
         public void InsertSP(Cricketer details)
         {
             try
